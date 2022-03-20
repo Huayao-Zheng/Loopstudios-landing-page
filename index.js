@@ -1,3 +1,4 @@
+const body = document.querySelector('body');
 const nav = document.querySelector(' nav');
 const overlay = document.querySelector('.overlay');
 const mobileMenu = document.querySelector('.mobile-menu');
@@ -8,13 +9,15 @@ openMenuIcon.addEventListener('click', openMenu);
 closeMenuIcon.addEventListener('click', closeMenu);
 
 function openMenu() {
-  mobileMenu.style.display = 'flex';
+  body.style.overflow = 'hidden';
+  setTimeout(() => (mobileMenu.style.display = 'flex'), 300);
   openMenuIcon.style.display = 'none';
   closeMenuIcon.style.display = 'inline-block';
   nav.classList.add('active');
 }
 
 function closeMenu() {
+  body.style.overflow = 'auto';
   setTimeout(() => (mobileMenu.style.display = 'none'), 300);
   openMenuIcon.style.display = 'inline-block';
   closeMenuIcon.style.display = 'none';

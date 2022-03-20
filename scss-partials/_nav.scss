@@ -4,15 +4,14 @@ nav {
   box-shadow: inset 0px 6rem 1rem 0px rgba(#000000, 0.4);
   position: fixed;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
   width: 100%;
-  max-width: 1440px;
   padding: 2.5rem 0;
 
   .container {
     display: flex;
     justify-content: space-between;
+    max-width: 1110.23px;
 
     .logo {
       width: 9rem;
@@ -53,8 +52,8 @@ nav {
   .overlay {
     position: fixed;
     top: -100vh;
-    left: 0;
-    width: 100vw;
+    left: -1vw;
+    width: 101vw;
     height: 100vh;
     background: var.$black;
     border-radius: 50%;
