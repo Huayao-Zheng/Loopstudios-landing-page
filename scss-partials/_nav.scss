@@ -14,14 +14,13 @@ nav {
 
     .logo {
       width: 9rem;
-      // width: clamp(9rem, 2.5vw, 12rem);
     }
 
     .mobile-menu {
       position: fixed;
       top: 50vh;
       transform: translateY(-70%);
-      display: flex;
+      display: none;
       flex-direction: column;
       gap: 1.5rem;
 
@@ -45,31 +44,87 @@ nav {
   }
 
   &.active .overlay {
-    left: 0;
+    top: 0;
     border-radius: 0;
   }
 
   .overlay {
     position: fixed;
-    top: 0;
-    left: -100%;
+    top: -100vh;
+    left: 0;
     width: 100vw;
     height: 100vh;
     background: var.$black;
     border-radius: 50%;
-    transition: all 0.5s ease;
+    transition: all 0.6s ease;
     z-index: -1;
   }
 }
 
 /******************** DESKTOP STYLES  **********************/
 @media (min-width: 768px) {
+  nav {
+    .container {
+      max-width: 1440px;
+      align-items: center;
+
+      .logo {
+        width: 12rem;
+      }
+
+      // hide menu icons for desktop
+      .open-menu-icon,
+      .close-menu-icon {
+        display: none !important;
+      }
+
+      .desktop-navigation {
+        display: flex;
+        gap: 2rem;
+
+        li {
+          display: flex;
+          position: relative;
+
+          &::after {
+            content: '';
+            position: absolute;
+            bottom: -0.5rem;
+            left: 50%;
+            transform: translateX(-50%) scale(0);
+            width: 1.5rem;
+            height: 0.125rem;
+            background: var.$white;
+            transition: all 0.3s ease;
+          }
+
+          &:hover::after {
+            transform: translateX(-50%) scale(1);
+          }
+        }
+
+        li a {
+          font-family: 'Alata', sans-serif;
+          font-weight: 400;
+          line-height: 1.5625rem;
+        }
+      }
+    }
+  }
 }
 
 /*
   <nav>
     <div class="container">
       <div class="logo"><img src="images/logo.svg" alt="logo" /></div>
+
+       <ul class="desktop-navigation">
+        <li><a href="#about">About</a></li>
+        <li><a href="#careers" Careers>Careers</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#support">Support</a></li>
+      </ul>
 
       <ul class="menu">
         <li><a href="#">About</a></li>
