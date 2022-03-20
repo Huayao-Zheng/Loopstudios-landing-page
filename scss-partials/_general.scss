@@ -35,6 +35,39 @@ ion-icon {
   cursor: pointer;
 }
 
+@mixin card-bg-img($img-name) {
+  background: url('../images/mobile/image-' + $img-name + '.jpg') no-repeat center/cover;
+
+  @media (min-width: 768px) {
+    background-image: url('../images/desktop/image-' + $img-name + '.jpg');
+  }
+}
+
+.earth-bg-img {
+  @include card-bg-img('deep-earth');
+}
+.night-arcade-bg-img {
+  @include card-bg-img('night-arcade');
+}
+.soccer-bg-img {
+  @include card-bg-img('soccer-team');
+}
+.grid-bg-img {
+  @include card-bg-img('grid');
+}
+.from-above-bg-img {
+  @include card-bg-img('from-above');
+}
+.pocket-borealis-bg-img {
+  @include card-bg-img('pocket-borealis');
+}
+.curiosity-bg-img {
+  @include card-bg-img('curiosity');
+}
+.fisheye-bg-img {
+  @include card-bg-img('fisheye');
+}
+
 .container {
   width: 87.2%;
   margin: 0 auto;
