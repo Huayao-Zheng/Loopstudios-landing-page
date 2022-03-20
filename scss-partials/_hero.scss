@@ -1,0 +1,38 @@
+@use 'variables' as var;
+
+.hero {
+  background: url(../images/mobile/image-hero.jpg) no-repeat center/cover;
+  width: 100%;
+  height: 40.625rem;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+
+    .hero__text {
+      font-size: clamp(2.5rem, 5.13vw + 1.22rem, 4.5rem);
+      line-height: clamp(2.38rem, 5.13vw + 1.09rem, 4.38rem);
+      padding: clamp(1.5rem, 2.56vw + 0.86rem, 2.5rem);
+      border: 2px solid var.$white;
+      max-width: 40.625rem;
+      text-transform: uppercase;
+    }
+  }
+}
+
+/******************** DESKTOP STYLES  **********************/
+@media (min-width: 768px) {
+  .hero {
+    background-image: url(../images/desktop/image-hero.jpg);
+
+    .container {
+      justify-content: flex-end;
+
+      .hero__text {
+        margin-bottom: 9.125rem;
+      }
+    }
+  }
+}

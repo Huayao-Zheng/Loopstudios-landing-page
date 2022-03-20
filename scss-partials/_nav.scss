@@ -4,8 +4,10 @@ nav {
   box-shadow: inset 0px 6rem 1rem 0px rgba(#000000, 0.4);
   position: fixed;
   top: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 100%;
+  max-width: 1440px;
   padding: 2.5rem 0;
 
   .container {
@@ -65,7 +67,6 @@ nav {
 @media (min-width: 768px) {
   nav {
     .container {
-      max-width: 1440px;
       align-items: center;
 
       .logo {
@@ -112,31 +113,3 @@ nav {
     }
   }
 }
-
-/*
-  <nav>
-    <div class="container">
-      <div class="logo"><img src="images/logo.svg" alt="logo" /></div>
-
-       <ul class="desktop-navigation">
-        <li><a href="#about">About</a></li>
-        <li><a href="#careers" Careers>Careers</a></li>
-        <li><a href="#events">Events</a></li>
-        <li><a href="#products">Products</a></li>
-        <li><a href="#support">Support</a></li>
-      </ul>
-
-      <ul class="menu">
-        <li><a href="#">About</a></li>
-        <li><a href="#">Careers</a></li>
-        <li><a href="#">Events</a></li>
-        <li><a href="#">Products</a></li>
-        <li><a href="#">Support</a></li>
-      </ul>
-
-        <ion-icon class="open-menu" name="menu-outline"></ion-icon>
-        <ion-icon class="close-menu" name="close-circle-outline"></ion-icon>
-    </div>
-    <div class="overlay"></div>
-  </nav>
-*/
