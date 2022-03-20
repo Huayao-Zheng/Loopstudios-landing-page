@@ -1,0 +1,74 @@
+@use 'variables' as var;
+
+nav {
+  position: fixed;
+  width: 100%;
+  padding: 2.5rem 0;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+
+    .logo {
+      width: 9rem;
+      // width: clamp(9rem, 2.5vw, 12rem);
+    }
+
+    .menu {
+      // display: none;
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+
+      li a {
+        font-size: 1.5rem;
+        font-family: 'Josefin Sans', sans-serif;
+        font-weight: 300;
+        text-transform: uppercase;
+      }
+    }
+
+    .open-menu,
+    .close-menu {
+      font-size: 1.5rem;
+    }
+
+    .close-menu {
+      display: none;
+    }
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: var.$black;
+    z-index: -1;
+  }
+}
+
+/*
+  <nav>
+    <div class="container">
+      <div class="logo"><img src="images/logo.svg" alt="logo" /></div>
+
+      <ul class="menu">
+        <li><a href="#">About</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Events</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">Support</a></li>
+      </ul>
+
+        <ion-icon class="open-menu" name="menu-outline"></ion-icon>
+        <ion-icon class="close-menu" name="close-circle-outline"></ion-icon>
+    </div>
+    <div class="overlay"></div>
+  </nav>
+*/
