@@ -1,25 +1,26 @@
 @use 'variables' as var;
 
 nav {
+  box-shadow: inset 0px 6rem 1rem 0px rgba(#000000, 0.4);
   position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   padding: 2.5rem 0;
 
   .container {
     display: flex;
     justify-content: space-between;
-    position: relative;
 
     .logo {
       width: 9rem;
       // width: clamp(9rem, 2.5vw, 12rem);
     }
 
-    .menu {
-      // display: none;
+    .mobile-menu {
       position: fixed;
-      top: 50%;
-      transform: translateY(-50%);
+      top: 50vh;
+      transform: translateY(-70%);
       display: flex;
       flex-direction: column;
       gap: 1.5rem;
@@ -32,25 +33,37 @@ nav {
       }
     }
 
-    .open-menu,
-    .close-menu {
+    .open-menu-icon,
+    .close-menu-icon {
       font-size: 1.5rem;
     }
 
-    .close-menu {
+    .close-menu-icon,
+    .desktop-navigation {
       display: none;
     }
+  }
+
+  &.active .overlay {
+    left: 0;
+    border-radius: 0;
   }
 
   .overlay {
     position: fixed;
     top: 0;
-    left: 0;
+    left: -100%;
     width: 100vw;
     height: 100vh;
     background: var.$black;
+    border-radius: 50%;
+    transition: all 0.5s ease;
     z-index: -1;
   }
+}
+
+/******************** DESKTOP STYLES  **********************/
+@media (min-width: 768px) {
 }
 
 /*
