@@ -1,0 +1,60 @@
+@use 'variables' as var;
+
+#creations {
+  .container {
+    .title {
+    }
+    h2 {
+      color: var.$black;
+      font-size: 2rem;
+      line-height: 2rem;
+      font-weight: 300;
+    }
+
+    button {
+    }
+
+    .cards-container {
+      .card {
+        &-text {
+        }
+      }
+    }
+  }
+}
+
+/*
+<div class="container">
+        <div class="title">
+          <h2>OUR CREATIONS</h2>
+          <button>SEE ALL</button>
+        </div>
+        <div class="cards-container">
+          <div class="card earth-bg-img">
+            <div class="card-text">DEEP<br />EARTH</div>
+          </div>
+          <div class="card night-arcade-bg-img">
+            <div class="card-text">NIGHT<br />ARCADE</div>
+          </div>
+          <div class="card soccer-bg-img">
+            <div class="card-text">SOCCER<br />TEAM VR</div>
+          </div>
+          <div class="card grid-bg-img">
+            <div class="card-text">THE<br />GRID</div>
+          </div>
+          <div class="card from-above-bg-img">
+            <div class="card-text">FROM UP<br />ABOVE VR</div>
+          </div>
+          <div class="card pocket-borealis-bg-img">
+            <div class="card-text">POCKET<br />BOREALIS</div>
+          </div>
+          <div class="card curiosity-bg-img">
+            <div class="card-text">THE<br />CURIOSITY</div>
+          </div>
+          <div class="card fisheye-bg-img">
+            <div class="card-text">MAKE IT<br />FISHEYE</div>
+          </div>
+        </div>
+</div>
+<button>SEE ALL</button>
+*/

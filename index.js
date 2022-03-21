@@ -7,6 +7,7 @@ const closeMenuIcon = document.querySelector('.close-menu-icon');
 
 openMenuIcon.addEventListener('click', openMenu);
 closeMenuIcon.addEventListener('click', closeMenu);
+window.addEventListener('scroll', onscrollStyle);
 
 function openMenu() {
   body.style.overflow = 'hidden';
@@ -22,4 +23,8 @@ function closeMenu() {
   openMenuIcon.style.display = 'inline-block';
   closeMenuIcon.style.display = 'none';
   nav.classList.remove('active');
+}
+
+function onscrollStyle() {
+  nav.classList.toggle('on-scroll-style', window.scrollY > 0);
 }
