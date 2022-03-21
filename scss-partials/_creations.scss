@@ -8,22 +8,18 @@
     font-size: 2rem;
     line-height: 2rem;
     font-weight: 300;
-    margin-bottom: 3rem;
     text-align: center;
   }
 
   // grid container
   .cards-container {
+    margin-top: 3rem;
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.5rem;
 
     .card {
-      // fluid width and heigh between 375px - 767px screen width
-      // width: clamp(20.44rem, 83.42vw + 0.89rem, 40.88rem);
-      // height: clamp(7.5rem, 30.61vw + 0.33rem, 15rem);
-
-      // found a easier way use aspect-ratio instead of clamp
+      // found a easier way: use aspect-ratio instead of clamp for div responsiveness
       aspect-ratio: 4 / 1.5;
       cursor: pointer;
       position: relative;
@@ -48,8 +44,8 @@
       }
 
       .card-text {
-        font-size: 1.5rem;
-        line-height: 1.5rem;
+        font-size: clamp(1.5rem, 0.75vw + 1.32rem, 2rem);
+        line-height: clamp(1.5rem, 0.75vw + 1.32rem, 2rem);
         position: absolute;
         bottom: 12%;
         left: 6%;
@@ -77,7 +73,7 @@
     }
 
     &-top {
-      // hide for desktop
+      // hide when in mobile
       display: none;
     }
     &-bottom {
@@ -86,38 +82,46 @@
   }
 }
 
-/*
-<div class="container">
-        <div class="title">
-          <h2>OUR CREATIONS</h2>
-          <button>SEE ALL</button>
-        </div>
-        <div class="cards-container">
-          <div class="card earth-bg-img">
-            <div class="card-text">DEEP<br />EARTH</div>
-          </div>
-          <div class="card night-arcade-bg-img">
-            <div class="card-text">NIGHT<br />ARCADE</div>
-          </div>
-          <div class="card soccer-bg-img">
-            <div class="card-text">SOCCER<br />TEAM VR</div>
-          </div>
-          <div class="card grid-bg-img">
-            <div class="card-text">THE<br />GRID</div>
-          </div>
-          <div class="card from-above-bg-img">
-            <div class="card-text">FROM UP<br />ABOVE VR</div>
-          </div>
-          <div class="card pocket-borealis-bg-img">
-            <div class="card-text">POCKET<br />BOREALIS</div>
-          </div>
-          <div class="card curiosity-bg-img">
-            <div class="card-text">THE<br />CURIOSITY</div>
-          </div>
-          <div class="card fisheye-bg-img">
-            <div class="card-text">MAKE IT<br />FISHEYE</div>
-          </div>
-        </div>
-</div>
-<button>SEE ALL</button>
-*/
+/******************** DESKTOP STYLES  **********************/
+@media (min-width: 768px) {
+  #creations {
+    margin-top: 6rem;
+
+    .title {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .title h2 {
+      font-size: 3rem;
+      line-height: 3rem;
+    }
+
+    // grid container
+    .cards-container {
+      margin-top: 5rem;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.875rem;
+
+      .card {
+        /////////// width / heigh
+        aspect-ratio: 1.7 / 3;
+
+        .card-text {
+          bottom: 7.1%;
+          left: 16%;
+        }
+      }
+    }
+
+    .btn-top {
+      // show when in desktop
+      display: inline-block;
+    }
+    .btn-bottom {
+      // hide when in desktop
+      display: none;
+    }
+  }
+}
