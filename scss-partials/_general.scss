@@ -18,9 +18,13 @@ body {
 }
 
 a,
-p {
+p,
+button {
   font-family: 'Alata', sans-serif;
   font-weight: 400;
+}
+
+a {
   text-decoration: none;
   color: inherit;
 }

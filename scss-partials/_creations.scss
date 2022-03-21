@@ -1,24 +1,87 @@
 @use 'variables' as var;
 
 #creations {
-  .container {
-    .title {
-    }
-    h2 {
-      color: var.$black;
-      font-size: 2rem;
-      line-height: 2rem;
-      font-weight: 300;
-    }
+  margin-top: 6rem;
 
-    button {
-    }
+  .title h2 {
+    color: var.$black;
+    font-size: 2rem;
+    line-height: 2rem;
+    font-weight: 300;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
 
-    .cards-container {
-      .card {
-        &-text {
-        }
+  // grid container
+  .cards-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+
+    .card {
+      // fluid width and heigh between 375px - 767px screen width
+      // width: clamp(20.44rem, 83.42vw + 0.89rem, 40.88rem);
+      // height: clamp(7.5rem, 30.61vw + 0.33rem, 15rem);
+
+      // found a easier way use aspect-ratio instead of clamp
+      aspect-ratio: 4 / 1.5;
+      cursor: pointer;
+      position: relative;
+
+      &:hover::before {
+        background: rgba(var.$white, 0.75);
       }
+
+      &:hover .card-text {
+        color: var.$black;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        transition: background 0.3s ease;
+      }
+
+      .card-text {
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+        position: absolute;
+        bottom: 12%;
+        left: 6%;
+        z-index: 2;
+        transition: color 0.3s ease;
+      }
+    }
+  }
+
+  .btn {
+    width: 9.8125rem;
+    height: 2.5rem;
+    font-size: 0.875rem;
+    line-height: 0.875rem;
+    letter-spacing: 0.3125rem;
+    color: var.$black;
+    background: var.$white;
+    border: 1px solid var.$black;
+    transition: all 0.1s ease;
+    cursor: pointer;
+
+    &:hover {
+      color: var.$white;
+      background: var.$black;
+    }
+
+    &-top {
+      // hide for desktop
+      display: none;
+    }
+    &-bottom {
+      margin-top: 2rem;
     }
   }
 }
