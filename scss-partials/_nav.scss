@@ -7,11 +7,13 @@ nav {
   width: 100%;
   padding: 2.5rem 0;
   z-index: 10;
+  transition: all 0.4s ease;
 
   &.on-scroll-style {
-    background: rgba(var.$black, 0.5);
+    background: rgba(1, 17, 23, 0.9);
     box-shadow: 0px 1px 5px rgba(var.$black, 0.5);
-    transition: all 0.4s ease;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
   }
 
   .container {
@@ -78,6 +80,11 @@ nav {
         width: 12rem;
       }
 
+      // hide opened mobile-menu when resizing to larger screens
+      .mobile-menu {
+        display: none !important;
+      }
+
       // hide menu icons for desktop
       .open-menu-icon,
       .close-menu-icon {
@@ -116,5 +123,9 @@ nav {
         }
       }
     }
+  }
+
+  .overlay {
+    display: none;
   }
 }
