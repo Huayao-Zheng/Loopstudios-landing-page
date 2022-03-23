@@ -1,0 +1,89 @@
+@use 'variables' as var;
+@use 'mixins' as mix;
+
+footer {
+  margin-top: 6rem;
+  padding: 3.5rem 0;
+  background: var.$black;
+
+  .container,
+  .block-left,
+  .block-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container {
+    gap: 3rem;
+  }
+
+  .block-left {
+    gap: 2rem;
+
+    .logo {
+      width: 9rem;
+    }
+
+    .desktop-navigation {
+      @include mix.navigation-styles;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+  }
+
+  .block-right {
+    gap: 1rem;
+
+    .socials {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .socials ion-icon {
+      font-size: 1.5rem;
+      border-radius: 50%;
+      outline: 1.5px dashed transparent;
+      outline-offset: 3px;
+      transition: all 0.3s ease;
+
+      &:hover {
+        outline-color: var.$white;
+      }
+    }
+
+    .copyright-text {
+      color: rgba(var.$white, 0.5);
+    }
+  }
+}
+
+/******************** DESKTOP STYLES  **********************/
+@media (min-width: 768px) {
+  footer {
+    margin-top: 11.5rem;
+    padding: 2.75rem 0;
+
+    .container {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .block-left {
+      align-items: flex-start;
+      gap: 1.5rem;
+
+      .desktop-navigation {
+        flex-direction: row;
+        gap: 2rem;
+      }
+    }
+
+    .block-right {
+      align-items: flex-end;
+      gap: 1.5rem;
+    }
+  }
+}

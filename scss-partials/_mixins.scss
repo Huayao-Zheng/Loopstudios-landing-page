@@ -1,0 +1,41 @@
+@use 'variables' as var;
+
+@mixin navigation-styles {
+  display: flex;
+  gap: 2rem;
+
+  li {
+    display: flex;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -0.5rem;
+      left: 50%;
+      transform: translateX(-50%) scale(0);
+      width: 1.5rem;
+      height: 0.125rem;
+      background: var.$white;
+      transition: all 0.3s ease;
+    }
+
+    &:hover::after {
+      transform: translateX(-50%) scale(1);
+    }
+  }
+
+  li a {
+    font-family: 'Alata', sans-serif;
+    font-weight: 400;
+    line-height: 1.5625rem;
+  }
+}
+
+@mixin card-bg-img($img-name) {
+  background: url('../images/mobile/image-' + $img-name + '.jpg') no-repeat center/cover;
+
+  @media (min-width: 768px) {
+    background-image: url('../images/desktop/image-' + $img-name + '.jpg');
+  }
+}
