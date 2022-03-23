@@ -7,7 +7,7 @@ Users should be able to:
 
 ### Screenshot
 
-![ss](./screenshot.jpg)
+![sss](./screenshot.jpg)
 
 ### Built with
 
